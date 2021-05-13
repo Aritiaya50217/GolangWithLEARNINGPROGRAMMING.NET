@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Controller</title>
+    <!-- ดึงไฟล์ style.css มาใช้-->
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1>Hello Golang</h1>
+    <!-- ดึงค่าจาก Data struct มาแสดง-->
+    Age : {{.Age}}
+    <br>
+    Username : {{.Username}}
+    <h3>Product Info</h3>
+    <!-- เอาข้อมูลมาแสดง ถ้าต้องการให้แสดงภาพต้องอ้างอิงที่อยู่ของไฟล์ -->
+    <table border = "1">
+        <tr>
+            <td>Id</td>
+            <td>{{.Product.Id}}</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>{{.Product.Name}}</td>
+        </tr>
+        <tr>
+            <td>Photo</td>
+            
+            <td><img src="/static/images/{{.Product.Photo}}"></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>{{.Product.Price}}</td>
+        </tr>
+        <tr>
+            <td>Quantity</td>
+            <td>{{.Product.Quantity}}</td>
+        </tr>
+    </table>
+    <h3>Product List</h3>
+        <table border="1">
+            <tr>
+                <th>No</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Photo</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+            <tr>
+                <!--แสดงข้อมูลตามลำดับ กำหนด $idx เป็นตัวแปรรับค่าลำดับ และตัวแปร $product จะรับค่ามาจาก type Products struct  
+                *** Photo ต้องใส่ที่อยู่ไฟล์ทุกครั้ง -->
+                {{range $idx, $product := .Products}}
+                <tr>
+                    <td>{{$idx}}</td>
+                    <td>{{$product.Id}}</td>
+                    <td>{{$product.Name}}</td>
+                    <td><img src="/static/images/{{$product.Photo}}"></td>
+                    <td>{{$product.Price}}</td>
+                    <td>{{$product.Quantity}}</td>
+                </tr>
+                {{end}}
+            </tr>
+
+        </table>
+</body>
+</html>
