@@ -1,0 +1,20 @@
+<!-- layout คือ คำที่ใช้ดึงข้อมูลจากไฟล์ .html อื่นมาแสดงในหน้าหลัก -->
+{{define "layout"}}
+
+<html>
+    <head>
+        <title>My Template</title>
+    </head>
+    <body>
+        <a href="/home">Home</a>
+        <a href="/aboutus">About</a>
+        <a href="/news">News</a>
+        <br><br>
+        <!-- เป็นการดึงข้อมูลในแต่ละ template มาแสดง ในตำแน่งที่เราวางแท็กนี้
+        โดยใช้คำว่า "content" เป็นตัวดึงข้อมูลมา -->
+        {{template "content" .}}
+        <br><br>
+        Copyright 2021
+    </body>
+</html>
+{{end}}

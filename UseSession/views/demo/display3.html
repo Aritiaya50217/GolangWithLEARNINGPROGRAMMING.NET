@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Demo</title>
+    </head>
+    <body>
+        
+        <h3>Product List</h3>
+        <!--แสดงข้อมูลทั้งหมด ตามที่ระบุใน Product struct ออกมาทีละชุดตามลำดับ-->
+        {{range .products}}
+            Id : {{.Id}}<br>
+            Name : {{.Name}}<br>
+            Price : {{.Price}}<br>
+            Quantity : {{.Quantity}}<br>
+            Status: {{.Status}}<br>
+            <p>*********************</p>
+        {{end}}
+        <a href="/demo">Back</a>
+       
+    </body>
+</html>

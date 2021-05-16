@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    <!-- upper คือ คำสั่งให้เป็นตัวพิมพ์ใหญ่ที่เราเขียนขึ้นในไฟล์ demo_controller.go 
+    .fullName คือ ดึงข้อมูลออกมาจากตัวแปร fullName ** ห้ามเขียนติดกัน -->
+    Full Name : {{upper .fullName}}
+    <h3>Product Info </h3>
+    Id : {{.product.Id}}<br>
+    <!--ถ้าต้องการให้เป็นตัวพิมพ์ใหญ่ก็เอา upper มาใส่-->
+    Name : {{upper .product.Name}}<br>
+    Price: {{.product.Price}}<br>
+    Quantity: {{.product.Quantity}}<br>
+    <!-- แสดงผลรวม -->
+    Total: {{total .product}}<br>
+    <!-- การแสดง Status ใช้ ตัวแปร displayStatus ที่เราสร้างไว้-->
+    Status: {{displayStatus .product.Status}}<br>
+    <!--แสดงค่าคงเหลือใน stock-->
+    Stock: {{checkStock .product}}<br>
+
+    
+</body>
+</html>

@@ -1,0 +1,6 @@
+ติดตั้ง package session อันที่ 1
+- go get github.com/gorilla/sessions
+- import "github.com/gorilla/sessions" ในหน้าที่ต้องการเรียกใช้
+
+ติดตั้ง package session อันที่ 2
+- go get github.com/astaxie/beego/session
