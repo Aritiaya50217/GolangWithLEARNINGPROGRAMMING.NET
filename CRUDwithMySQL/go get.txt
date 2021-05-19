@@ -1,0 +1,4 @@
+ติดตั้ง package การใช้งาน MySQL
+- go get -u github.com/go-sql-driver/mysql
+- inport _"github.com/go-sql-driver/mysql" ในหน้าที่ต้องการเรียกใช้งาน
+- สร้างตารางใน MySQL
