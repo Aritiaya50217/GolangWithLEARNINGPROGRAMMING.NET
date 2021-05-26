@@ -1,0 +1,3 @@
+ติดตั้ง router
+- go get -u github.com/gorilla/mux
+- ใช้ postman ในการทดสอบ api
