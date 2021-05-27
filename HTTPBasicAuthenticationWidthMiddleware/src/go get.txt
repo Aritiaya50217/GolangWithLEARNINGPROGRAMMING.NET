@@ -1,0 +1,6 @@
+ติดตั้ง router
+- go get -u github.com/gorilla/mux
+- go get -u github.com/gorilla/handlers
+
+-ใช้ postman ในการทดสอบ api
+
